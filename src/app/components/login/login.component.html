@@ -1,17 +1,19 @@
 <div class="login ">
     <div class="container d-flex align-items-center justify-content-center min-vh-100">
         <div class="box position-relative overflow-hidden rounded-3">
-            <form autocomplete="off" class="position-absolute rounded-3">
+            <form #loginData="ngForm" autocomplete="off" class="position-absolute rounded-3">
                 <h2 class="text-center">Login</h2>
 
                 <div class="inputBox position-relative">
-                    <input class="position-relative  w-100 border-0 bg-transparent" type="text" required>
+                    <input class="position-relative  w-100 border-0 bg-transparent" type="text" name="username" required
+                        ngModel>
                     <span class="position-absolute start-0">Username</span>
                     <i class="position-absolute start-0 bottom-0 w-100 overflow-hidden"></i>
                 </div>
 
                 <div class="inputBox position-relative">
-                    <input class="position-relative  w-100 border-0 bg-transparent" type="password" required>
+                    <input class="position-relative  w-100 border-0 bg-transparent" type="password" name="password"
+                        required ngModel>
                     <span class="position-absolute start-0">Password</span>
                     <i class="position-absolute start-0 bottom-0 w-100 overflow-hidden"></i>
                 </div>
@@ -21,7 +23,7 @@
                     <a routerLink="/signup"><span class="text-white">Don't have an account ? </span> Sign up</a>
                 </div>
 
-                <input type="submit" value="Login">
+                <input (click)="loginFormData(loginData.value)" type="button" value="Login">
             </form>
         </div>
     </div>
