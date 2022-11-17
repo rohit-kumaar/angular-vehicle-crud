@@ -16,7 +16,8 @@
             </ul>
             <form class="d-flex" role="search">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button (click)="clickAddEmployee()" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
                     Add Employee
                 </button>
 
@@ -40,16 +41,17 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+        <tr *ngFor="let item of employeeData">
+            <td>{{item.id}}</td>
+            <td>{{item.firstName}}</td>
+            <td>{{item.lastName}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.mobile}}</td>
+            <td>{{item.salary}}</td>
             <td>
-                <button class="btn btn-dark me-3">Edit</button>
-                <button class="btn btn-primary">Delete</button>
+                <button (click)="onEdit(item)" class="btn btn-dark me-3" type="button" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Edit</button>
+                <button (click)="deleteEmployee(item)" class="btn btn-primary">Delete</button>
             </td>
         </tr>
 
@@ -71,33 +73,36 @@
             <div class="modal-body">
                 <form [formGroup]="formValue">
                     <div class="mb-3">
-                        <label for="" class="form-label">First Name</label>
-                        <input type="text" formControlName="firstName" class="form-control" id=""
+                        <label for="firstName" class="form-label">First Name</label>
+                        <input type="text" formControlName="firstName" class="form-control" id="firstName"
                             aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
-                        <label for="" class="form-label">Last name</label>
-                        <input type="text" formControlName="lastName" class="form-control" id="">
+                        <label for="lastName" class="form-label">Last name</label>
+                        <input type="text" formControlName="lastName" class="form-control" id="lastName">
                     </div>
                     <div class="mb-3">
-                        <label for="" class="form-label">Email Id</label>
-                        <input type="email" formControlName="email" class="form-control" id="">
+                        <label for="email" class="form-label">Email Id</label>
+                        <input type="email" formControlName="email" class="form-control" id="email">
                     </div>
                     <div class="mb-3">
-                        <label for="" class="form-label">Mobile no.</label>
-                        <input type="number" formControlName="mobile" class="form-control" id="">
+                        <label for="mobile" class="form-label">Mobile no.</label>
+                        <input type="number" formControlName="mobile" class="form-control" id="mobile">
                     </div>
                     <div class="mb-3">
-                        <label for="" class="form-label">Salary</label>
-                        <input type="number" formControlName="salary" class="form-control" id="">
+                        <label for="salary" class=" form-label">Salary</label>
+                        <input type="number" formControlName="salary" class="form-control" id="salary">
                     </div>
 
                 </form>
             </div>
 
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" (click)="postEmployeeDetails()" class="btn btn-primary">Add</button>
+            <div class=" modal-footer">
+                <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" *ngIf="showAddBtn" (click)="postEmployeeDetails()"
+                    class="btn btn-primary">Add</button>
+                <button type="button" *ngIf="showUpdateBtn" (click)="updateEmployeeDetails()"
+                    class="btn btn-primary">Update</button>
             </div>
 
         </div>
