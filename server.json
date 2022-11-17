@@ -1,19 +1,26 @@
 {
-  "posts": [
+  "post": [
     {
       "id": 1,
       "title": "json-server",
       "author": "typicode"
     }
   ],
-  "comments": [
+  "login": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "registration": [
     {
       "id": 1,
       "body": "some comment",
       "postId": 1
     }
   ],
-  "profile": {
+  "dashboard": {
     "name": "typicode"
   }
 }
