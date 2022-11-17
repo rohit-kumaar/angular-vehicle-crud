@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from 'src/app/service/api.service';
-import { VehicleModel } from './dashboard.model';
+import { VehicleModel } from '../dashboard/dashboard.model';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'],
+  selector: 'app-add-vehicle',
+  templateUrl: './add-vehicle.component.html',
+  styleUrls: ['./add-vehicle.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class AddVehicleComponent implements OnInit {
+
   formValue!: FormGroup;
   employeeData!: any;
   showAddBtn!: boolean;
@@ -124,4 +125,5 @@ export class DashboardComponent implements OnInit {
     this.showAddBtn = true;
     this.showUpdateBtn = false;
   }
+
 }

@@ -1,8 +1,10 @@
-export class EmployeeModel {
+export class VehicleModel {
   id: number = 0;
-  firstName: string = '';
-  lastName: string = '';
+  office: string = '';
+  number: string = '';
+  city: string = '';
+  state: string = '';
+  phone: string = '';
   email: string = '';
-  mobile: string = '';
-  salary: string = '';
+  address: string = '';
 }
