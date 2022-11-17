@@ -81,7 +81,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Email Id</label>
-                        <input type="email" formControlName="emailId" class="form-control" id="">
+                        <input type="email" formControlName="email" class="form-control" id="">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Mobile no.</label>
@@ -94,10 +94,12 @@
 
                 </form>
             </div>
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Add</button>
+                <button type="button" (click)="postEmployeeDetails()" class="btn btn-primary">Add</button>
             </div>
+
         </div>
     </div>
 </div>

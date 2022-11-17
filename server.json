@@ -4,6 +4,14 @@
       "id": 1,
       "title": "json-server",
       "author": "typicode"
+    },
+    {
+      "id": 2,
+      "firstName": "ricky",
+      "lastName": "pong",
+      "email": "ricky@gmail.com",
+      "mobile": 88888888888888,
+      "salary": 100000000000000000000
     }
   ],
   "login": [
