@@ -18,15 +18,10 @@ const routes: Routes = [
       {
         path: 'registered-vehicle',
         component: RegisteredVehicleComponent,
-        children: [
-          { path: 'edit', component: EditComponent },
-          { path: 'view', component: ViewComponent }
-        ],
       },
       { path: 'add-vehicle', component: AddVehicleComponent },
-      // { path: 'edit', component: EditComponent },
-      // { path: 'detail/:id', component: DetailComponent, outlet: 'detail' },
-      // { path: 'someUrl/:id', component: DetailComponent, outlet: 'popup' },
+      { path: 'edit', component: EditComponent },
+      { path: 'view', component: ViewComponent },
     ],
   },
 ];
@@ -36,5 +31,3 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
-
-// export const appRoutingModule = RouterModule.forRoot(routes);

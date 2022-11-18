@@ -24,7 +24,7 @@ export class AddVehicleComponent implements OnInit {
   ngOnInit(): void {}
 
   addVehicle() {
-    this.api.postEmployee(this.addVehicleForm.value).subscribe(
+    this.api.post(this.addVehicleForm.value).subscribe(
       () => {
         alert('Add Vehicle successfully');
         this.router.navigate(['dashboard/registered-vehicle']);

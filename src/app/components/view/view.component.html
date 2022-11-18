@@ -1,6 +1,6 @@
 <!-- table  -->
 <div class="container mt-5 pt-5">
-    <table *ngFor="let item of employeeData" class="table table-striped table-bordered">
+    <table class="table table-striped table-bordered">
         <tbody>
             <tr>
                 <th colspan="2">(<span>01</span>) MH Registration - Regional Transport Office (RTO) - MH14</th>
@@ -32,8 +32,8 @@
 
             <tr>
                 <td colspan="2" class="py-4 text-center">
-                    <button class="btn btn-dark me-3 px-4" type="button">Go Back</button>
-
+                    <button [routerLink]="['/dashboard/registered-vehicle']" class="btn btn-dark me-3 px-4"
+                        type="button">Go Back</button>
                 </td>
             </tr>
 

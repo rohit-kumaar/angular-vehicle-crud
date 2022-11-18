@@ -23,14 +23,11 @@
                 <td>{{item.phone}}</td>
                 <td>{{item.email}}</td>
                 <td>{{item.address}}</td>
-
-
-
                 <td>
                     <div>
-                        <button [routerLink]="['edit']" class="btn btn-primary">Edit</button>
-                        <button [routerLink]="['view']" class="btn btn-dark mx-2">View</button>
-                        <button class="btn btn-danger">Delete</button>
+                        <button [routerLink]="['/dashboard/edit']" class="btn btn-primary">Edit</button>
+                        <button [routerLink]="['/dashboard/view']" class="btn btn-dark mx-2">View</button>
+                        <button (click)="deleteDetails(item.id)" class="btn btn-danger">Delete</button>
                     </div>
 
                 </td>

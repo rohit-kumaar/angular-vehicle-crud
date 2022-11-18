@@ -11,14 +11,24 @@
       "address": "Near Town Planning, , Pimpi-Chinchwad"
     },
     {
-      "office": "q",
-      "number": "1",
-      "city": "q",
-      "state": "22",
-      "phone": "22",
-      "email": "rohit@gmail.com",
-      "address": "Near Town Planning,, Pimpi-Chinchwad",
-      "id": 2
+      "id": 2,
+      "office": "MH Registration",
+      "number": "MH14",
+      "city": "Dy. RTO, Pimpri-Chinchwad",
+      "state": "Maharashtra",
+      "phone": "020-27492828",
+      "email": "xyz@gmail.com",
+      "address": "Near Town Planning, , Pimpi-Chinchwad"
+    },
+    {
+      "id": 3,
+      "office": "MH Registration",
+      "number": "MH14",
+      "city": "Dy. RTO, Pimpri-Chinchwad",
+      "state": "Maharashtra",
+      "phone": "020-27492828",
+      "email": "xyz@gmail.com",
+      "address": "Near Town Planning, , Pimpi-Chinchwad"
     }
   ],
   "registration": [
