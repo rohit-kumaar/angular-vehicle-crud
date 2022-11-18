@@ -17,7 +17,7 @@ export class RegisteredVehicleComponent implements OnInit {
     });
   }
 
-  // delete functionality
+  // update after delete functionality
   getVehicle() {
     this.api.get().subscribe((data) => {
       this.regdVehicle = data;
