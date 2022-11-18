@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from 'src/app/service/api.service';
-import { VehicleModel } from './dashboard.model';
+import { VehicleModel } from '../dashboard/dashboard.model';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'],
+  selector: 'app-view',
+  templateUrl: './view.component.html',
+  styleUrls: ['./view.component.scss'],
 })
-export class DashboardComponent implements OnInit {
+export class ViewComponent implements OnInit {
   formValue!: FormGroup;
   employeeData!: any;
   showAddBtn!: boolean;

@@ -1,37 +1,35 @@
-<div class="container mt-5 pt-5">
-    <form [formGroup]="formValue">
-        <div class="mb-3">
+<div class="container mt-5 pt-5 ">
+    <form [formGroup]="addVehicleForm" class="p-3 border border-1 rounded-2" (ngSubmit)="addVehicle()">
+        <div class="mb-2">
             <label for="office" class="form-label">Transport Office</label>
             <input type="text" formControlName="office" class="form-control" id="office">
         </div>
-        <div class="mb-3">
+        <div class="mb-2">
             <label for="number" class="form-label">Number</label>
             <input type="text" formControlName="number" class="form-control" id="number">
         </div>
-        <div class="mb-3">
+        <div class="mb-2">
             <label for="city" class="form-label">City</label>
             <input type="text" formControlName="city" class="form-control" id="city">
         </div>
-        <div class="mb-3">
+        <div class="mb-2">
             <label for="state" class="form-label">State</label>
             <input type="text" formControlName="state" class="form-control" id="state">
         </div>
-        <div class="mb-3">
+        <div class="mb-2">
             <label for="phone" class=" form-label">Phone</label>
             <input type="text" formControlName="phone" class="form-control" id="phone">
         </div>
-        <div class="mb-3">
+        <div class="mb-2">
             <label for="email" class=" form-label">Email</label>
             <input type="text" formControlName="email" class="form-control" id="email">
         </div>
-        <div class="mb-3">
+        <div class="mb-2">
             <label for="address" class=" form-label">Address</label>
             <input type="text" formControlName="address" class="form-control" id="address">
         </div>
+
+        <button type="submit" class="btn btn-primary">Add</button>
     </form>
 
-    <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    <button type="button" *ngIf="showAddBtn" (click)="postEmployeeDetails()" class="btn btn-primary">Add</button>
-    <button type="button" *ngIf="showUpdateBtn" (click)="updateEmployeeDetails()"
-        class="btn btn-primary">Update</button>
 </div>

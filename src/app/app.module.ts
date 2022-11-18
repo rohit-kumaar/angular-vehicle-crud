@@ -8,6 +8,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { AddVehicleComponent } from './components/add-vehicle/add-vehicle.component';
+import { ViewComponent } from './components/view/view.component';
+import { RegisteredVehicleComponent } from './components/registered-vehicle/registered-vehicle.component';
+import { EditComponent } from './components/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,9 @@ import { AddVehicleComponent } from './components/add-vehicle/add-vehicle.compon
     SignupComponent,
     DashboardComponent,
     AddVehicleComponent,
+    ViewComponent,
+    RegisteredVehicleComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,

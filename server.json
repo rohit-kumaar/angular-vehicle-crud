@@ -2,13 +2,23 @@
   "post": [
     {
       "id": 1,
-      "office": "MH Registration - Regional Transport Office (RTO) - MH14",
+      "office": "MH Registration",
       "number": "MH14",
       "city": "Dy. RTO, Pimpri-Chinchwad",
       "state": "Maharashtra",
       "phone": "020-27492828",
       "email": "xyz@gmail.com",
-      "address": "Near Town Planning, Pradhikaran, Nigdi, Behind Primary School, Pimpi-Chinchwad"
+      "address": "Near Town Planning, , Pimpi-Chinchwad"
+    },
+    {
+      "office": "q",
+      "number": "1",
+      "city": "q",
+      "state": "22",
+      "phone": "22",
+      "email": "rohit@gmail.com",
+      "address": "Near Town Planning,, Pimpi-Chinchwad",
+      "id": 2
     }
   ],
   "registration": [
