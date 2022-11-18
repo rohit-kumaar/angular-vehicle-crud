@@ -4,18 +4,30 @@
             <form [formGroup]="loginForm" (ngSubmit)="login()" class="position-absolute rounded-3">
                 <h2 class="text-center">Login</h2>
 
-                <div class="inputBox position-relative">
-                    <input formControlName="userName" class="position-relative  w-100 border-0 bg-transparent"
-                        type="text" name="username" required>
-                    <span class="position-absolute start-0">Username</span>
-                    <i class="position-absolute start-0 bottom-0 w-100 overflow-hidden"></i>
+                <div>
+                    <div class="inputBox position-relative">
+                        <input formControlName="userName" class="position-relative  w-100 border-0 bg-transparent"
+                            type="text" name="username" required>
+                        <span class="position-absolute start-0">Username</span>
+                        <i class="position-absolute start-0 bottom-0 w-100 overflow-hidden"></i>
+                    </div>
+                    <span *ngIf="userName && userName.invalid && userName.touched" class="text-danger"
+                        style="font-size: 10px;">
+                        Please choose a user name.
+                    </span>
                 </div>
 
-                <div class="inputBox position-relative">
-                    <input formControlName="password" class="position-relative  w-100 border-0 bg-transparent"
-                        type="password" name="password" required>
-                    <span class="position-absolute start-0">Password</span>
-                    <i class="position-absolute start-0 bottom-0 w-100 overflow-hidden"></i>
+                <div>
+                    <div class="inputBox position-relative">
+                        <input formControlName="password" class="position-relative  w-100 border-0 bg-transparent"
+                            type="password" name="password" required>
+                        <span class="position-absolute start-0">Password</span>
+                        <i class="position-absolute start-0 bottom-0 w-100 overflow-hidden"></i>
+                    </div>
+                    <span *ngIf="password && password.invalid && password.touched" class="text-danger"
+                        style="font-size: 10px;">
+                        Please choose a password.
+                    </span>
                 </div>
 
                 <div class="links d-flex flex-column flex-sm-row justify-content-between pt-2 pt-sm-0">
@@ -23,7 +35,7 @@
                     <a routerLink="/signup"><span class="text-white">Don't have an account ? </span> Sign up</a>
                 </div>
 
-                <button type="submit">Login</button>
+                <button [disabled]="loginForm.invalid" type="submit">Login</button>
             </form>
         </div>
     </div>
