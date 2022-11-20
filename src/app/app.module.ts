@@ -11,6 +11,8 @@ import { AddVehicleComponent } from './components/add-vehicle/add-vehicle.compon
 import { ViewComponent } from './components/view/view.component';
 import { RegisteredVehicleComponent } from './components/registered-vehicle/registered-vehicle.component';
 import { EditComponent } from './components/edit/edit.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { EditComponent } from './components/edit/edit.component';
     ViewComponent,
     RegisteredVehicleComponent,
     EditComponent,
+    NavbarComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
