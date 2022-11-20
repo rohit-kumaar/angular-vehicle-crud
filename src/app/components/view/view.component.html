@@ -6,7 +6,25 @@
     mollitia libero quae praesentium quos consectetur minima, veniam porro modi
     totam culpa dolores similique tempore iure. Est excepturi dolore nihil!
   </p>
+</div>
 
+<!-- loading  -->
+<div *ngIf="loading">
+  <app-loading></app-loading>
+</div>
+
+<!-- Error msg  -->
+<div *ngIf="!loading && errorMessage">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h4 class="fw-bold text-danger">{{ errorMessage }}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!loading && isNotEmpty()" class="container">
   <div class="row">
     <div class="col-12">
       <div class="card">
@@ -22,25 +40,25 @@
             <div class="col-sm-9">
               <ul class="list-group">
                 <li class="list-group-item">
-                  Office: <span class="fw-bold">Office</span>
+                  Office: <span class="fw-bold">{{ vehicle.office }}</span>
                 </li>
                 <li class="list-group-item">
-                  Number: <span class="fw-bold">Number</span>
+                  Number: <span class="fw-bold">{{ vehicle.number }}</span>
                 </li>
                 <li class="list-group-item">
-                  City: <span class="fw-bold">City</span>
+                  City: <span class="fw-bold">{{ vehicle.city }}</span>
                 </li>
                 <li class="list-group-item">
-                  State: <span class="fw-bold">State</span>
+                  State: <span class="fw-bold">{{ vehicle.state }}</span>
                 </li>
                 <li class="list-group-item">
-                  Phone: <span class="fw-bold">Phone</span>
+                  Phone: <span class="fw-bold">{{ vehicle.phone }}</span>
                 </li>
                 <li class="list-group-item">
-                  Email: <span class="fw-bold">Email</span>
+                  Email: <span class="fw-bold">{{ vehicle.email }}</span>
                 </li>
                 <li class="list-group-item">
-                  Address: <span class="fw-bold">Address</span>
+                  Address: <span class="fw-bold">{{ vehicle.address }}</span>
                 </li>
               </ul>
             </div>
@@ -49,7 +67,7 @@
             <a
               routerLink="/dashboard/registered-vehicle"
               class="btn btn-dark px-4"
-              ><i class="fa fa-arrow-left "></i> Back</a
+              ><i class="fa fa-arrow-alt-circle-left"></i> Back</a
             >
           </div>
         </div>

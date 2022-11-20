@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { IVehicle } from 'src/app/models/IVehicle';
 import { ApiService } from 'src/app/service/api.service';
 
 @Component({
@@ -8,14 +9,37 @@ import { ApiService } from 'src/app/service/api.service';
   styleUrls: ['./view.component.scss'],
 })
 export class ViewComponent implements OnInit {
-  viewVehicle: any;
+  public loading: boolean = false;
+  public vehicleId: string | null = null;
+  public vehicle: IVehicle = {} as IVehicle;
+  public errorMessage: string | null = null;
 
-  constructor(private api: ApiService, private router: Router) {
-    // this.api.get().subscribe((data) => {
-    //   this.viewVehicle = data;
-    //   console.log(this.viewVehicle[2]);
-    // });
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private apiService: ApiService
+  ) {}
+
+  ngOnInit(): void {
+    this.activatedRoute.paramMap.subscribe((param) => {
+      this.vehicleId = param.get('vehicleId');
+    });
+
+    if (this.vehicleId) {
+      this.loading = true;
+      this.apiService.getVehicle(this.vehicleId).subscribe(
+        (data) => {
+          this.vehicle = data;
+          this.loading = false;
+        },
+        (error) => {
+          this.errorMessage = error;
+          this.loading = false;
+        }
+      );
+    }
   }
 
-  ngOnInit(): void {}
+  public isNotEmpty() {
+    return Object.keys(this.vehicle).length > 0;
+  }
 }
