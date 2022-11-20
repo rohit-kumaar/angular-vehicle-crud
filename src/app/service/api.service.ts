@@ -13,31 +13,31 @@ export class ApiService {
 
   //  GET All Vehicle
   public getAllVehicle(): Observable<IVehicle[]> {
-    let dataURL: string = `${this.serviceURL}/registered-vehicle`;
+    let dataURL: string = `${this.serviceURL}/registered_vehicle`;
     return this.httpClient.get<IVehicle[]>(dataURL).pipe(catchError(this.handleError));
   }
 
   // GET Single Vehicle
   public getVehicle(vehicleId: string): Observable<IVehicle> {
-    let dataURL: string = `${this.serviceURL}/registered-vehicle/${vehicleId}`;
+    let dataURL: string = `${this.serviceURL}/registered_vehicle/${vehicleId}`;
     return this.httpClient.get<IVehicle>(dataURL).pipe(catchError(this.handleError));
   }
 
   // CREATE a Vehicle
   public createVehicle(vehicle: IVehicle): Observable<IVehicle> {
-    let dataURL: string = `${this.serviceURL}/registered-vehicle`;
+    let dataURL: string = `${this.serviceURL}/registered_vehicle`;
     return this.httpClient.post<IVehicle>(dataURL, vehicle).pipe(catchError(this.handleError));
   }
 
    // UPDATE a Vehicle
    public updateVehicle(vehicle: IVehicle, vehicleId:string): Observable<IVehicle> {
-    let dataURL: string = `${this.serviceURL}/registered-vehicle/${vehicleId}`;
+    let dataURL: string = `${this.serviceURL}/registered_vehicle/${vehicleId}`;
     return this.httpClient.put<IVehicle>(dataURL, vehicle).pipe(catchError(this.handleError));
   }
 
      // DELETE a Vehicle
      public deleteVehicle( vehicleId:string): Observable<{}> {
-      let dataURL: string = `${this.serviceURL}/registered-vehicle/${vehicleId}`;
+      let dataURL: string = `${this.serviceURL}/registered_vehicle/${vehicleId}`;
       return this.httpClient.delete<{}>(dataURL).pipe(catchError(this.handleError));
     }
 

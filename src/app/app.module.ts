@@ -13,6 +13,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { RegisteredVehicleComponent } from './components/registered-vehicle/registered-vehicle.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ViewComponent } from './components/view/view.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ViewComponent } from './components/view/view.component';
     EditComponent,
     NavbarComponent,
     PageNotFoundComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

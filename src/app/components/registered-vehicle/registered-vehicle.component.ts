@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { IVehicle } from 'src/app/models/IVehicle';
 import { ApiService } from 'src/app/service/api.service';
 import { VehicleModel } from '../dashboard/dashboard.model';
 
@@ -9,26 +10,23 @@ import { VehicleModel } from '../dashboard/dashboard.model';
   styleUrls: ['./registered-vehicle.component.scss'],
 })
 export class RegisteredVehicleComponent implements OnInit {
-  // regdVehicle: any;
+  public loading: boolean = false;
+  public vehicles: IVehicle[] = [];
+  public errorMessage: string | null = null;
 
-  constructor(private api: ApiService, private router: Router) {
-    // this.api.get().subscribe((data) => {
-    //   this.regdVehicle = data;
-    // });
+  constructor(private apiService: ApiService, private router: Router) {}
+
+  ngOnInit(): void {
+    this.loading = true;
+    this.apiService.getAllVehicle().subscribe(
+      (data) => {
+        this.vehicles = data;
+        this.loading = false;
+      },
+      (error) => {
+        this.errorMessage = error;
+        this.loading = false;
+      }
+    );
   }
-
-  // update after delete functionality
-  // getVehicle() {
-  //   this.api.get().subscribe((data) => {
-  //     this.regdVehicle = data;
-  //   });
-  // }
-
-  // deleteDetails(id: any) {
-  //   this.api.delete(id).subscribe(() => {
-  //     this.getVehicle();
-  //   });
-  // }
-
-  ngOnInit(): void {}
 }
