@@ -11,10 +11,10 @@ export class ViewComponent implements OnInit {
   viewVehicle: any;
 
   constructor(private api: ApiService, private router: Router) {
-    this.api.get().subscribe((data) => {
-      this.viewVehicle = data;
-      console.log(this.viewVehicle[2]);
-    });
+    // this.api.get().subscribe((data) => {
+    //   this.viewVehicle = data;
+    //   console.log(this.viewVehicle[2]);
+    // });
   }
 
   ngOnInit(): void {}

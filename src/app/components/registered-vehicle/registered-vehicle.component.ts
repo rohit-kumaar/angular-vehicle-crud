@@ -9,26 +9,26 @@ import { VehicleModel } from '../dashboard/dashboard.model';
   styleUrls: ['./registered-vehicle.component.scss'],
 })
 export class RegisteredVehicleComponent implements OnInit {
-  regdVehicle: any;
+  // regdVehicle: any;
 
   constructor(private api: ApiService, private router: Router) {
-    this.api.get().subscribe((data) => {
-      this.regdVehicle = data;
-    });
+    // this.api.get().subscribe((data) => {
+    //   this.regdVehicle = data;
+    // });
   }
 
   // update after delete functionality
-  getVehicle() {
-    this.api.get().subscribe((data) => {
-      this.regdVehicle = data;
-    });
-  }
+  // getVehicle() {
+  //   this.api.get().subscribe((data) => {
+  //     this.regdVehicle = data;
+  //   });
+  // }
 
-  deleteDetails(id: any) {
-    this.api.delete(id).subscribe(() => {
-      this.getVehicle();
-    });
-  }
+  // deleteDetails(id: any) {
+  //   this.api.delete(id).subscribe(() => {
+  //     this.getVehicle();
+  //   });
+  // }
 
   ngOnInit(): void {}
 }
