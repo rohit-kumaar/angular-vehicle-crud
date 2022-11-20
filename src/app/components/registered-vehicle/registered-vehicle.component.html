@@ -31,6 +31,7 @@
     <thead>
       <tr>
         <th scope="col">SL No.</th>
+        <th scope="col">Vehicle</th>
         <th scope="col">Office</th>
         <th scope="col">Number</th>
         <th scope="col">City</th>
@@ -44,6 +45,9 @@
     <tbody>
       <tr *ngFor="let vehicle of vehicles">
         <th scope="row">{{ vehicle.id }}</th>
+        <th>
+          <img class="regd-img" [src]="vehicle.photo" />
+        </th>
         <td>{{ vehicle.office }}</td>
         <td>{{ vehicle.number }}</td>
         <td>{{ vehicle.city }}</td>
