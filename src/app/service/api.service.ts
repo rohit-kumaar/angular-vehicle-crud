@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, map, Observable, throwError } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { catchError, Observable, throwError } from 'rxjs';
 import { IVehicle } from '../models/IVehicle';
 
 @Injectable({
@@ -53,39 +53,4 @@ export class ApiService {
     }
     return throwError(errorMessage);
   }
-
-  // post(data: any) {
-  //   return this.http
-  //     .post<any>('http://localhost:3000/registered_vehicle', data)
-  //     .pipe(
-  //       map((res: any) => {
-  //         return res;
-  //       })
-  //     );
-  // }
-  // get() {
-  //   return this.http.get<any>('http://localhost:3000/registered_vehicle').pipe(
-  //     map((res: any) => {
-  //       return res;
-  //     })
-  //   );
-  // }
-  // update(data: any, id: number) {
-  //   return this.http
-  //     .put<any>('http://localhost:3000/registered_vehicle/' + id, data)
-  //     .pipe(
-  //       map((res: any) => {
-  //         return res;
-  //       })
-  //     );
-  // }
-  // delete(id: number) {
-  //   return this.http
-  //     .delete<any>('http://localhost:3000/registered_vehicle/' + id)
-  //     .pipe(
-  //       map((res: any) => {
-  //         return res;
-  //       })
-  //     );
-  // }
 }

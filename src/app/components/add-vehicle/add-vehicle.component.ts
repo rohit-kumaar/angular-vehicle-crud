@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IVehicle } from 'src/app/models/IVehicle';
 import { ApiService } from 'src/app/service/api.service';

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IVehicle } from 'src/app/models/IVehicle';
 import { ApiService } from 'src/app/service/api.service';
-import { VehicleModel } from '../dashboard/dashboard.model';
 
 @Component({
   selector: 'app-registered-vehicle',
