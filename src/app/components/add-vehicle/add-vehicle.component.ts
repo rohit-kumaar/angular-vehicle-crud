@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { IVehicle } from 'src/app/models/IVehicle';
 import { ApiService } from 'src/app/service/api.service';
 
 @Component({
@@ -9,29 +10,23 @@ import { ApiService } from 'src/app/service/api.service';
   styleUrls: ['./add-vehicle.component.scss'],
 })
 export class AddVehicleComponent implements OnInit {
-  constructor(private api: ApiService, private router: Router) {}
+  public loading: boolean = false;
+  public vehicle: IVehicle = {} as IVehicle;
+  public errorMessage: string | null = null;
 
-  // addVehicleForm = new FormGroup({
-  //   office: new FormControl(''),
-  //   number: new FormControl(''),
-  //   city: new FormControl(''),
-  //   state: new FormControl(''),
-  //   phone: new FormControl(''),
-  //   email: new FormControl(''),
-  //   address: new FormControl(''),
-  // });
+  constructor(private apiService: ApiService, private router: Router) {}
 
   ngOnInit(): void {}
 
-  // addVehicle() {
-  //   this.api.post(this.addVehicleForm.value).subscribe(
-  //     () => {
-  //       alert('Add Vehicle successfully');
-  //       this.router.navigate(['dashboard/registered-vehicle']);
-  //     },
-  //     (err) => {
-  //       alert(err + 'Something want wrong');
-  //     }
-  //   );
-  // }
+  public addSubmit() {
+    this.apiService.createVehicle(this.vehicle).subscribe(
+      (data) => {
+        this.router.navigate(['dashboard/registered-vehicle']).then();
+      },
+      (error) => {
+        this.errorMessage = error;
+        this.router.navigate(['dashboard/add-vehicle']).then();
+      }
+    );
+  }
 }

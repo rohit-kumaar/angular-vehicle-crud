@@ -9,95 +9,132 @@
   </div>
 </div>
 
+<!-- loading  -->
+<div *ngIf="loading">
+  <app-loading></app-loading>
+</div>
+
+<!-- Error msg  -->
+<div *ngIf="!loading && errorMessage">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h4 class="fw-bold text-danger">{{ errorMessage }}</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container list-group-item-danger pt-3 shadow-lg">
   <div class="row">
     <div class="col-sm-8">
-      <form class="p-3 border border-1 rounded-2">
+      <form class="p-3 border border-1 rounded-2" (submit)="addSubmit()">
         <div class="form-floating mb-3">
           <input
+            [(ngModel)]="vehicle.photo"
+            name="photo"
             type="text"
             class="form-control"
             id="Photo"
             placeholder="Photo"
+            required="true"
           />
           <label for="Photo">Photo</label>
         </div>
         <div class="form-floating mb-3">
           <input
+            [(ngModel)]="vehicle.office"
+            name="office"
             type="text"
             class="form-control"
             id="Office"
             placeholder="Office"
+            required="true"
           />
           <label for="Office">Office</label>
         </div>
         <div class="form-floating mb-3">
           <input
-            type="number"
+            [(ngModel)]="vehicle.number"
+            name="number"
+            type="text"
             class="form-control"
             id="Number"
             placeholder="Number"
+            required="true"
           />
           <label for="Number">Model Number</label>
         </div>
         <div class="form-floating mb-3">
           <input
+            [(ngModel)]="vehicle.city"
+            name="city"
             type="text"
             class="form-control"
             id="City"
             placeholder="City"
+            required="true"
           />
           <label for="City">City</label>
         </div>
         <div class="form-floating mb-3">
           <input
+            [(ngModel)]="vehicle.state"
+            name="state"
             type="text"
             class="form-control"
             id="State"
             placeholder="State"
+            required="true"
           />
           <label for="State">State</label>
         </div>
         <div class="form-floating mb-3">
           <input
+            [(ngModel)]="vehicle.phone"
+            name="phone"
             type="number"
             class="form-control"
             id="Phone"
             placeholder="Phone"
+            required="true"
           />
           <label for="Phone">Phone</label>
         </div>
         <div class="form-floating mb-3">
           <input
+            [(ngModel)]="vehicle.email"
+            name="email"
             type="email"
             class="form-control"
             id="Email"
             placeholder="Email"
+            required="true"
           />
           <label for="Email">Email</label>
         </div>
         <div class="form-floating mb-3">
           <input
+            [(ngModel)]="vehicle.address"
+            name="address"
             type="text"
             class="form-control"
             id="Address"
             placeholder="Address"
+            required="true"
           />
           <label for="Address">Address</label>
         </div>
 
         <button type="submit" class="btn btn-primary">Create</button>
         <a routerLink="/dashboard/registered-vehicle" class="btn btn-dark mx-3"
-          ><i class="fa fa-arrow-left"></i> Back</a
+          ><i class="fa fa-arrow-alt-circle-left"></i> Back</a
         >
       </form>
     </div>
 
     <div class="col-sm-4">
-      <img
-        src="https://www.pngitem.com/pimgs/m/22-220721_circled-user-male-type-user-colorful-icon-png.png"
-        class="view-image"
-      />
+      <img [src]="vehicle.photo" class="view-image" />
     </div>
   </div>
 </div>
