@@ -65,7 +65,10 @@
             >
               <i class="fa fa-eye"></i>
             </a>
-            <button class="btn btn-danger">
+            <button
+              class="btn btn-danger"
+              (click)="clickDeleteVehicle(vehicle.id)"
+            >
               <i class="fa fa-trash"></i>
             </button>
           </div>

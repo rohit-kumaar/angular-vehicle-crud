@@ -17,6 +17,10 @@ export class RegisteredVehicleComponent implements OnInit {
   constructor(private apiService: ApiService, private router: Router) {}
 
   ngOnInit(): void {
+    this.getAllVehiclesFromServer();
+  }
+
+  public getAllVehiclesFromServer() {
     this.loading = true;
     this.apiService.getAllVehicle().subscribe(
       (data) => {
@@ -28,5 +32,18 @@ export class RegisteredVehicleComponent implements OnInit {
         this.loading = false;
       }
     );
+  }
+
+  public clickDeleteVehicle(vehicleId: string | undefined) {
+    if (vehicleId) {
+      this.apiService.deleteVehicle(vehicleId).subscribe(
+        (data) => {
+          this.getAllVehiclesFromServer();
+        },
+        (error) => {
+          this.errorMessage = error;
+        }
+      );
+    }
   }
 }
